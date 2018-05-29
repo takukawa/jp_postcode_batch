@@ -1,7 +1,11 @@
 require 'csv'
 require 'pp'
+require 'settingslogic'
 
-FILE = './KEN_ALL.CSV'
+class Settings < Settingslogic
+  source "./application.yaml"
+  namespace 'csv'
+end
 
 def includeUntouchable(str)
   return str.match?(/〜|以下に|次に番地がくる場合/) ? true : false
@@ -33,24 +37,7 @@ def pickupFromEnumerable(e)
   ]
 end
 
-headers = [
-  'jisX0402',
-  'postcode5',
-  'postcode7',
-  'state_kana',
-  'city_kana',
-  'street_kana',
-  'state',
-  'city',
-  'street',
-  'flg_multiple_postcode',
-  'flg_include_ban',
-  'flg_include_chome',
-  'flg_multiple_address',
-  'flg_changed',
-  'flg_why_changed',
-]
-postcodesTable = CSV.table(FILE, headers: headers, :converters => nil)
+postcodesTable = CSV.table(Settings.file, headers: Settings.header, :converters => nil)
 
 # CSVの全レコードを郵便番号(7桁)単位でマージする
 #   1つの郵便番号に複数の市区町村(:city)が紐づく場合はそれぞれ別レコードとする

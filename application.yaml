@@ -1,0 +1,18 @@
+csv:
+  file: KEN_ALL.CSV
+  header:
+    - jisX0402
+    - postcode5
+    - postcode7
+    - state_kana
+    - city_kana
+    - street_kana
+    - state
+    - city
+    - street
+    - flg_multiple_postcode
+    - flg_include_ban
+    - flg_include_chome
+    - flg_multiple_address
+    - flg_changed
+    - flg_why_changed
