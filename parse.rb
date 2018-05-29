@@ -1,5 +1,4 @@
 require 'csv'
-require 'pp'
 require 'settingslogic'
 
 class Settings < Settingslogic
