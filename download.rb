@@ -10,7 +10,7 @@ end
 def decompress(file, outpath)
   entries = []
   Dir.mkdir(outpath) unless Dir.exist?(outpath)
-  input = Zip::InputStream.open(file, 0)
+  input = Zip::ZipInputStream.open(file)
   while (entry = input.get_next_entry)
     savepath  = File.join(outpath, entry.name)
     writefile = File.open(savepath, 'wb')
