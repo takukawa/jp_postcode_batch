@@ -5,7 +5,9 @@ zip:
   baseEncording : Shift_JIS
 
 csv:
-  file: KEN_ALL.CSV
+  file       : KEN_ALL.CSV
+  outputFile : output.csv
+  workingDir : /tmp/jp_postcode/
   header:
     - jisX0402
     - postcode5
