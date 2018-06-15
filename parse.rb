@@ -36,7 +36,7 @@ def pickupFromEnumerable(e)
   ]
 end
 
-postcodesTable = CSV.table(Settings.file, headers: Settings.header, :converters => nil)
+postcodesTable = CSV.table(Settings.workingDir + Settings.file, headers: Settings.header, :converters => nil)
 
 # CSVの全レコードを郵便番号(7桁)単位でマージする
 #   1つの郵便番号に複数の市区町村(:city)が紐づく場合はそれぞれ別レコードとする
@@ -124,6 +124,6 @@ mergedE.each {|e|
 }
 
 # export by CSV
-CSV.open('output.csv','w') {|csv|
+CSV.open(Settings.workingDir + Settings.outputFile, 'w') {|csv|
   results.each {|result| csv << result}
 }
