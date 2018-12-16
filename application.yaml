@@ -1,5 +1,5 @@
 zip:
-  url           : http://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip
+  url           : https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip
   file          : ken_all.zip
   workingDir    : /tmp/jp_postcode/
   baseEncording : Shift_JIS
