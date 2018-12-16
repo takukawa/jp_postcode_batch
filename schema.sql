@@ -1,5 +1,5 @@
-DROP   TABLE IF EXISTS jp_postcode.postcode20180616;
-CREATE TABLE jp_postcode.postcode20180616 (
+DROP   TABLE IF EXISTS jp_postcode.postcode;
+CREATE TABLE jp_postcode.postcode (
     postcode7             int(7)    ZEROFILL NOT NULL,
     state                 varchar(100)   NOT NULL,
     city                  varchar(100)   NOT NULL,
