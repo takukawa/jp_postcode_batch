@@ -20,19 +20,19 @@ def pickupFromEnumerable(e)
 
   [
     e[:postcode7],
-    e[:postcode5],
+    # e[:postcode5],
     e[:state],
     e[:city],
     e[:street],
     e[:state_kana],
     e[:city_kana],
     e[:street_kana],
-    e[:flg_multiple_postcode],
-    e[:flg_include_ban],
-    e[:flg_include_chome],
-    e[:flg_multiple_address],
-    e[:flg_changed],
-    e[:flg_why_changed],
+    # e[:flg_multiple_postcode],
+    # e[:flg_include_ban],
+    # e[:flg_include_chome],
+    # e[:flg_multiple_address],
+    # e[:flg_changed],
+    # e[:flg_why_changed],
   ]
 end
 
