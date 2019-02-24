@@ -6,5 +6,6 @@ CREATE TABLE jp_postcode.postcode (
     street                varchar(100)   NOT NULL,
     state_kana            varchar(100)   NOT NULL,
     city_kana             varchar(100)   NOT NULL,
-    street_kana           varchar(100)   NOT NULL
+    street_kana           varchar(100)   NOT NULL,
+    created_at            varchar(100)   NOT NULL
 );
