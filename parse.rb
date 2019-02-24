@@ -27,6 +27,7 @@ def pickupFromEnumerable(e)
     e[:state_kana],
     e[:city_kana],
     e[:street_kana],
+    e[:created_at],
     # e[:flg_multiple_postcode],
     # e[:flg_include_ban],
     # e[:flg_include_chome],
@@ -36,6 +37,7 @@ def pickupFromEnumerable(e)
   ]
 end
 
+datetime       = Time.new.to_i
 postcodesTable = CSV.table(Settings.workingDir + Settings.file, headers: Settings.header, :converters => nil)
 
 # CSVの全レコードを郵便番号(7桁)単位でマージする
@@ -119,6 +121,9 @@ mergedE.each {|e|
   # レコードの結合処理の関係でカナだけが余分に付与されている可能性があるため、
   # その場合には不要なカナ情報を削除する
   e[:street_kana].gsub!(/ .*/, '') if !e[:street].include?(' ') && e[:street_kana].include?(' ')
+
+  # 実行日時を付与
+  e[:created_at] = datetime
 
   results << pickupFromEnumerable(e)
 }
